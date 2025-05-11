@@ -1,1 +1,2 @@
-# YouTube-video-downloader-my
+# YouTube-video-downloader
+downloader for YouTube shorts and videos
