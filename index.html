@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube Downloader</title>
+</head>
+<body>
+    <h1>Video Downloader</h1>
+    <input type="text" id="urlInput" placeholder="Paste YouTube link here">
+    <button onclick="downloadVideo()">Download</button>
+    <p id="message"></p>
+
+    <script>
+        async function downloadVideo() {
+        const url = document.getElementById('urlInput').value;
+        const response = await fetch('https://YouTube-video-downloader.fly.dev/download', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ url: url })
+        });
+
+        const result = await response.json();
+        document.getElementById('message').innerText = result.message;
+        }
+    </script>we
+</body>
+</html>
